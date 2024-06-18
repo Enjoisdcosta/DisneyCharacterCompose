@@ -5,7 +5,7 @@ import com.example.disneycharactercompose.data.model.DataModel
 import com.example.disneycharactercompose.data.model.DisneyCharacterModel
 import javax.inject.Inject
 
-class DisneyCharacterRepositoryImpementaion @Inject constructor(
+class DisneyCharacterRepositoryImplementation @Inject constructor(
     private val apiDetail: APIEndpoints
 ): DisneyCharacterRepository {
     override suspend fun getCharacterList(): List<DataModel> {
