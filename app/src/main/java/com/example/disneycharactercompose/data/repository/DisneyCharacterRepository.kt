@@ -1,18 +1,13 @@
-package com.example.disneycharactercompose.data.api
+package com.example.disneycharactercompose.data.repository
 
 import com.example.disneycharactercompose.data.model.DataModel
 import com.example.disneycharactercompose.data.model.DisneyCharacterModel
-import retrofit2.http.GET
 
-interface APIEndpoints {
+interface DisneyCharacterRepository {
 
-    @GET(APIDetails.CHARACTER_ENDPOINT)
     suspend fun getCharacterList(): List<DataModel>
 
-    @GET(APIDetails.CHARACTER_ENDPOINT)
     suspend fun getCharacterFromList(): List<DisneyCharacterModel>
-
-
 
 
 }
