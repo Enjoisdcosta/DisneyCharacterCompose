@@ -8,11 +8,8 @@ import javax.inject.Inject
 class DisneyCharacterRepositoryImplementation @Inject constructor(
     private val apiDetail: APIEndpoints
 ): DisneyCharacterRepository {
-    override suspend fun getCharacterList(): List<DataModel> {
-        return apiDetail.getCharacterList()
-    }
 
-    override suspend fun getCharacterFromList(): List<DisneyCharacterModel> {
+    override suspend fun getCharacterFromList(): DisneyCharacterModel {
         return apiDetail.getCharacterFromList()
     }
 }

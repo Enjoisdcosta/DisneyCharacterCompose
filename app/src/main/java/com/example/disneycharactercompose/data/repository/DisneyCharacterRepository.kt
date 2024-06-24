@@ -5,9 +5,9 @@ import com.example.disneycharactercompose.data.model.DisneyCharacterModel
 
 interface DisneyCharacterRepository {
 
-    suspend fun getCharacterList(): List<DataModel>
+//    suspend fun getCharacterList(): List<DataModel>
 
-    suspend fun getCharacterFromList(): List<DisneyCharacterModel>
+    suspend fun getCharacterFromList(): DisneyCharacterModel
 
 
 }

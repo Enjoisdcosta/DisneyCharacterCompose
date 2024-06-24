@@ -22,26 +22,30 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.disneycharactercompose.data.model.DataModel
+import com.example.disneycharactercompose.data.model.DisneyCharacterModel
 import com.example.disneycharactercompose.ui.viewmodel.DisneyCharacterViewModel
 
 @Composable
 fun CharacterListScreen(viewModel: DisneyCharacterViewModel = hiltViewModel()) {
-    val character by viewModel.characters.collectAsState()
-    val selectedProduct by viewModel.selectCharacter.collectAsState()
+    val characterModel by viewModel.selectCharacter.collectAsState()
 
-    LazyColumn {
-        items(character) { character ->
-            character?.let {
-                CharacterItem(it)
+    characterModel?.data?.let { data ->
+        LazyColumn {
+            items(data) { character ->
+                character?.let {
+                    CharacterItem(it)
+                }
             }
         }
+    } ?: run {
+        Text("Loading...")
     }
 }
-
 
 @Composable
 fun CharacterItem(character: DataModel) {
     Column {
-        Text(text = "TV Shows: ${character.tvShows}")
+        Text(text = "Name: ${character.name}")
+        // Display other fields as needed
     }
 }

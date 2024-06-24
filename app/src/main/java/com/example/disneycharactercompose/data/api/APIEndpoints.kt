@@ -6,11 +6,11 @@ import retrofit2.http.GET
 
 interface APIEndpoints {
 
-    @GET(APIDetails.CHARACTER_ENDPOINT)
-    suspend fun getCharacterList(): List<DataModel>
+//    @GET(APIDetails.CHARACTER_ENDPOINT)
+//    suspend fun getCharacterList(): List<DataModel>
 
     @GET(APIDetails.CHARACTER_ENDPOINT)
-    suspend fun getCharacterFromList(): List<DisneyCharacterModel>
+    suspend fun getCharacterFromList(): DisneyCharacterModel
 
 
 
