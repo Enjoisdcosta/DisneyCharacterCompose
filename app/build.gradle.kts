@@ -63,6 +63,7 @@ dependencies {
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
     testImplementation(libs.junit)
+    testImplementation(libs.junit.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(platform(libs.androidx.compose.bom))
@@ -86,6 +87,16 @@ dependencies {
     //okhttp
     implementation("com.squareup.okhttp3:okhttp:4.10.0")
     implementation("com.squareup.okhttp3:logging-interceptor:4.10.0")
+
+    implementation ("io.coil-kt:coil-compose:2.0.0")
+
+
+    //Testing dependencies
+    testImplementation ("junit:junit:4.13.2")
+    testImplementation ("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.4")
+    testImplementation ("org.mockito:mockito-core:3.12.4")
+    testImplementation ("org.mockito.kotlin:mockito-kotlin:3.2.0")
+    testImplementation ("app.cash.turbine:turbine:0.7.0") // For testing flows
 
 
 

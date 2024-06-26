@@ -4,6 +4,7 @@ import com.example.disneycharactercompose.data.api.APIDetails.BASE_URL
 import com.example.disneycharactercompose.data.api.APIEndpoints
 import com.example.disneycharactercompose.data.repository.DisneyCharacterRepository
 import com.example.disneycharactercompose.data.repository.DisneyCharacterRepositoryImplementation
+import com.google.gson.Gson
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -26,10 +27,11 @@ class MainModule {
             .addInterceptor( HttpLoggingInterceptor()
                 .apply { level = HttpLoggingInterceptor.Level.BODY } )
             .build()
+        val gson = Gson()
 
         return Retrofit.Builder()
             .baseUrl(BASE_URL)
-            .addConverterFactory(GsonConverterFactory.create())
+            .addConverterFactory(GsonConverterFactory.create(gson))
             .client(okHttpClient)
             .build()
     }
