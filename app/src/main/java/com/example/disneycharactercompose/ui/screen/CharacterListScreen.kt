@@ -1,6 +1,8 @@
 package com.example.disneycharactercompose.ui.screen
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -12,6 +14,7 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -51,14 +54,16 @@ fun CharacterListScreen(viewModel: DisneyCharacterViewModel = hiltViewModel()) {
         Text("Loading...")
     }
 }
-
 @Composable
 fun CharacterItem(character: DataModel) {
-    Box {
+    Box(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(8.dp)
+            .background(MaterialTheme.colorScheme.surface, shape = RoundedCornerShape(8.dp))
+            .padding(8.dp)
+    ) {
         Row(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(vertical = 8.dp),
             verticalAlignment = Alignment.CenterVertically
         ) {
             Image(
@@ -66,12 +71,24 @@ fun CharacterItem(character: DataModel) {
                 contentDescription = "Profile Image",
                 modifier = Modifier
                     .size(64.dp)
-                    .clip(CircleShape),
+                    .clip(CircleShape)
+                    .border(2.dp, MaterialTheme.colorScheme.surface, CircleShape),
                 contentScale = ContentScale.Crop
             )
-            Text(text = "Name: ${character.name}")
-
-            // Display other fields as needed
+            Spacer(modifier = Modifier.width(16.dp))
+            Column {
+                Text(
+                    text = "Name: ${character.name}",
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = MaterialTheme.colorScheme.onSurface
+                )
+                // Add more fields as needed
+                Text(
+                    text = "Description: ${character.enemies}",
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.7f)
+                )
+            }
         }
     }
 }
