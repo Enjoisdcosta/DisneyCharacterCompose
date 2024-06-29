@@ -15,6 +15,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Card
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -56,7 +57,7 @@ fun CharacterListScreen(viewModel: DisneyCharacterViewModel = hiltViewModel()) {
 }
 @Composable
 fun CharacterItem(character: DataModel) {
-    Box(
+    Card(
         modifier = Modifier
             .fillMaxWidth()
             .padding(8.dp)
