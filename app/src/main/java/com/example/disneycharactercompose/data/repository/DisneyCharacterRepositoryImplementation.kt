@@ -12,4 +12,6 @@ class DisneyCharacterRepositoryImplementation @Inject constructor(
     override suspend fun getCharacterFromList(): DisneyCharacterModel {
         return apiDetail.getCharacterFromList()
     }
+
+
 }

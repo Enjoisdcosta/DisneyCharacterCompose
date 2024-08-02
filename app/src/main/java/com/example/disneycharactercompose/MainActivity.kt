@@ -14,7 +14,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.disneycharactercompose.data.model.DisneyCharacterModel
 import com.example.disneycharactercompose.ui.screen.CharacterListScreen
-import com.example.disneycharactercompose.ui.screen.CharacterListScreenTest
 import com.example.disneycharactercompose.ui.theme.DisneyCharacterComposeTheme
 import dagger.hilt.android.AndroidEntryPoint
 
